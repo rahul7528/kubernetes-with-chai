@@ -62,4 +62,4 @@ You write what you want in a manifest, send it with kubectl, the control plane s
 2. Try Day 2: create your first Deployment and Service locally with kind or minikube.
 3. Contribute your own analogies via pull request.
 
-Made for beginners, by a beginner. PRs welcome.
+#Built from my own messy notes. If it helps you, improve it for the next person.
