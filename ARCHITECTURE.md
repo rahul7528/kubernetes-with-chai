@@ -1,4 +1,4 @@
-# Kubernetes Architecture — Simplified
+# Kubernetes Architecture
 
 ## High Level
 
