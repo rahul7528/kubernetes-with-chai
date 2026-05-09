@@ -58,7 +58,7 @@ You write what you want in a manifest, send it with kubectl, the control plane s
 
 ## Next Steps
 
-1. Read `/architecture/ARCHITECTURE.md` for a visual breakdown of control plane vs nodes.
+1. Read `/ARCHITECTURE.md` for a visual breakdown of control plane vs nodes.
 2. Try Day 2: create your first Deployment and Service locally with kind or minikube.
 3. Contribute your own analogies via pull request.
 
