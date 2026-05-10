@@ -8,11 +8,11 @@
 ## BASIC QUESTIONS — Day 1
 
 ### Q1. What is Kubernetes?
-**Definition:** An open-source container orchestration platform that automates deployment, scaling, and management of containerized applications.
+**Definition:** An open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. -m
 **Chai:** The franchise operating manual. It tells every stall how to make chai the same way, how many trays to keep ready, and what to do if a cook is sick.
 
 ### Q2. What is a cluster?
-**Definition:** A set of Nodes (machines) managed by a control plane that work together to run containerized workloads.
+**Definition:** A set of Nodes (machines) managed by a control plane that work together to run containerized workloads. -m
 **Chai:** Your whole chai chain — head office plus all stalls across the city.
 
 ### Q3. Name the 4 main control plane components.
