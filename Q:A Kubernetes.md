@@ -20,31 +20,31 @@
 **Chai:** Head office staff: receptionist (API), ledger book (etcd), floor manager (scheduler), shift supervisors (controllers).
 
 ### Q4. What does etcd do?
-**Definition:** A consistent distributed key-value store that holds all cluster state and configuration.
+**Definition:** A consistent distributed key-value store that holds all cluster state and configuration.<br>
 **Chai:** The master ledger where every order, recipe change, and stall status is written. If the ledger is lost, the shop forgets everything.
 
 ### Q5. What does kube-scheduler do?
-**Definition:** Watches for unscheduled Pods and binds them to a suitable Node based on resources and constraints.
+**Definition:** Watches for unscheduled Pods and binds them to a suitable Node based on resources and constraints.<br>
 **Chai:** Manager who looks at all stalls and decides which free stall gets the next tray.
 
 ### Q6. What is a Node?
-**Definition:** A worker machine that runs Pods, containing kubelet, kube-proxy, and a container runtime.
+**Definition:** A worker machine that runs Pods, containing kubelet, kube-proxy, and a container runtime.<br>
 **Chai:** One physical chai stall with gas, counter, and a cook.
 
 ### Q7. What runs on a worker Node?
-**Definition:** kubelet, kube-proxy, container runtime.
+**Definition:** kubelet, kube-proxy, container runtime.<br>
 **Chai:** The cook, the cashier who routes customers, and the stove.
 
 ### Q8. What does kubelet do?
-**Definition:** Agent on each Node that ensures the containers in PodSpecs are running and healthy.
+**Definition:** Agent on each Node that ensures the containers in PodSpecs are running and healthy.<br>
 **Chai:** The stall cook who reads the order slip and actually brews.
 
 ### Q9. How do you create a local cluster?
-**Definition:** Use tools like kind, minikube, or k3d to run a cluster in Docker.
+**Definition:** Use tools like kind, minikube, or k3d to run a cluster in Docker.<br>
 **Chai:** Set up a practice kitchen in your garage before opening real stalls.
 
 ### Q10. What is the difference between control plane and worker?
-**Definition:** Control plane makes decisions, workers execute workloads.
+**Definition:** Control plane makes decisions, workers execute workloads.<br>
 **Chai:** Head office plans, stalls cook.
 
 ---
