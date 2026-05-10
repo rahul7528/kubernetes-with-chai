@@ -1,7 +1,7 @@
 # Day 2 — Pod Commands Cheatsheet
 
 ## Create and inspect
-kubectl apply -f pod.yaml     &nbsp;&nbsp;         # create Pod from YAML <br>
+kubectl apply -f pod.yaml     &emsp;&emsp;      # create Pod from YAML <br>
 kubectl get pods             &nbsp;&nbsp;          # list Pods <br>
 kubectl get pods -o wide          &nbsp;&nbsp;     # see Node and IP <br>
 kubectl get pod chai-pod -o yaml   &nbsp;&nbsp;    # full spec and status <br>
