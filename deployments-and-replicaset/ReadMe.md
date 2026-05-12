@@ -98,12 +98,22 @@ spec:
             port: 80
 ```
 
+
 PART C — How they work together
+
 You apply Deployment
+
 Deployment controller creates ReplicaSet v1 with pod-template-hash=abc123
+
 ReplicaSet controller creates 3 Pods with ownerReference to RS
+
 You update image to 1.26
+
 Deployment creates RS v2 with hash=def456
+
 RollingUpdate: scale v2 up to 1, wait Ready, scale v1 down to 2, repeat
+
 Old RS v1 scaled to 0, kept for rollback
+
+
 Chai: Manager writes new roster, supervisor hires new cooks gradually.
