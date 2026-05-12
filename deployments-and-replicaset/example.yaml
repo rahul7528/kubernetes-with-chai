@@ -1,0 +1,91 @@
+
+---
+# 1. Standalone ReplicaSet (for learning only)
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-basic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rs-demo
+  template:
+    metadata:
+      labels:
+        app: rs-demo
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.25
+
+---
+# 2. Deployment that creates ReplicaSet automatically
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-basic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-demo
+  template:
+    metadata:
+      labels:
+        app: deploy-demo
+    spec:
+      containers:
+      - name: web
+        image: nginx:1.25
+
+---
+# 3. Deployment with zero-downtime strategy
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-zero-downtime
+spec:
+  replicas: 5
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: myapp:v1
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 5
+
+---
+# 4. Deployment with Recreate (for migrations)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-recreate
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: migrator
+  template:
+    metadata:
+      labels:
+        app: migrator
+    spec:
+      containers:
+      - name: migrator
+        image: migrator:v2
