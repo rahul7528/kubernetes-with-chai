@@ -1,4 +1,4 @@
-# Day 3 — Deployments & ReplicaSets (Complete)
+Deployments & ReplicaSets (Complete)
 
 > Kubernetes with Chai — Definition first, Chai second
 
