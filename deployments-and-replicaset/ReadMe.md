@@ -65,3 +65,45 @@ spec.strategy.rollingUpdate.maxUnavailable - Pods allowed down
 spec.minReadySeconds - wait after Pod ready
 spec.progressDeadlineSeconds - timeout for rollout
 spec.revisionHistoryLimit - how many old RS to keep
+
+
+```apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chai-deploy-example
+spec:
+  replicas: 3
+  revisionHistoryLimit: 5
+  progressDeadlineSeconds: 600
+  minReadySeconds: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: chai
+  template:
+    metadata:
+      labels:
+        app: chai
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.25
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+```
+
+PART C — How they work together
+You apply Deployment
+Deployment controller creates ReplicaSet v1 with pod-template-hash=abc123
+ReplicaSet controller creates 3 Pods with ownerReference to RS
+You update image to 1.26
+Deployment creates RS v2 with hash=def456
+RollingUpdate: scale v2 up to 1, wait Ready, scale v1 down to 2, repeat
+Old RS v1 scaled to 0, kept for rollback
+Chai: Manager writes new roster, supervisor hires new cooks gradually.
